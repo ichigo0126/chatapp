@@ -1,9 +1,18 @@
-import React from "react";
-import Sidebar from "./Sidebar";
+import React from 'react';
+import Sidebar from './Sidebar';
+import Signup from './SignUp';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 export default function Page() {
   return (
     <div className="flex justify-start">
+      {/* <Signup /> */}
       <Sidebar />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </BrowserRouter>
       <div className="container mx-auto">
         <div className="min-w-full border rounded lg:grid lg:grid-cols-3">
           <div className="border-r border-gray-300 lg:col-span-1">
@@ -13,9 +22,9 @@ export default function Page() {
                   <svg
                     fill="none"
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     viewBox="0 0 24 24"
                     className="w-6 h-6 text-gray-300"
                   >
@@ -146,9 +155,9 @@ export default function Page() {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
@@ -162,9 +171,9 @@ export default function Page() {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13"
                     />
                   </svg>
@@ -173,7 +182,7 @@ export default function Page() {
                 <input
                   type="text"
                   placeholder="Message"
-                  class="block w-full py-2 pl-4 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700"
+                  className="block w-full py-2 pl-4 mx-3 bg-gray-100 rounded-full outline-none focus:text-gray-700"
                   name="message"
                   required
                 />
@@ -186,9 +195,9 @@ export default function Page() {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
                     />
                   </svg>
