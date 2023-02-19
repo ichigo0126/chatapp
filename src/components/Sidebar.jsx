@@ -1,11 +1,19 @@
-import React from "react";
-import PersonIcon from "@mui/icons-material/Person";
-import ChatIcon from "@mui/icons-material/Chat";
-import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
-import GroupsIcon from "@mui/icons-material/Groups";
-import LogoutIcon from "@mui/icons-material/Logout";
+import React from 'react';
+import PersonIcon from '@mui/icons-material/Person';
+import ChatIcon from '@mui/icons-material/Chat';
+import PersonAddAlt1Icon from '@mui/icons-material/PersonAddAlt1';
+import GroupsIcon from '@mui/icons-material/Groups';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { auth } from '../firebase';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 export default function Sidebar() {
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    signOut(auth);
+    navigate('/login');
+  };
   return (
     <div className="flex flex-col items-center py-4 flex-shrink-0 w-20 bg-indigo-800">
       <ul className="flex flex-col space-y-2">
@@ -27,7 +35,7 @@ export default function Sidebar() {
         </li>
         {/* 二つ目 */}
         <li>
-          <button className="flex items-center">
+          <button className="flex items-    center">
             <span className="flex items-center justify-center text-indigo-100 hover:bg-indigo-700 h-12 w-12 rounded-2xl">
               <svg
                 className="w-6 h-6"
@@ -81,10 +89,9 @@ export default function Sidebar() {
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <LogoutIcon />
+          <LogoutIcon onClick={handleLogout}/>
         </svg>
       </button>
     </div>
-    
   );
 }
